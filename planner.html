@@ -1,0 +1,182 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title></title>
+		<script src="js/jquery.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		
+	</head>
+
+	<body>
+		<nav>
+			
+		</nav>
+	<div id="wrapper">
+		<!--the filter for mobile-->
+		<div class="mobileSearch">
+			<div id="close">
+				<img src="images/close.png" class="close">
+			</div>
+			<div class="search">
+					<form>
+						<select>
+							<option>Hall Rental</option>
+							<option>Photography</option>
+							<option>Food and Catering</option>
+							<option>Decorations</option>
+						</select>
+
+						<input type="text" placeholder="Location">
+
+						<p>Capacity</p>
+						<input value="1000" class="range" id="textInput" type="range" min="1000" max="20000" oninput="amount.value=textInput.value">
+						<output name="amount" for="textInput" >1000</output>
+						<output style="float:right;" >20000</output>
+						<p>Price Range</p>
+
+						<input class="range" type="range">
+
+						<button>SEARCH</button>
+
+					</form>
+
+					<div class="details">
+						<h1>Grill At The Pent</h1>
+						<p class="date">23 / 03 / 2015</p>
+						<p class="services">Hall</p>
+						<p class="services">Music</p>
+						<p class="services">Catering & Decoration</p>
+
+						<button>Cancel</button>
+						<button>Previous</button>
+						<button>Next</button>
+
+						<button class="addNewService">Add New Service</button>
+						<button class="finish-btn">Finish</button>
+					</div>
+				</div>
+		</div>
+		<!--end of filter-->
+
+		<section id="container">
+
+		<button id="filter">Filters</button>
+			<div class="left">
+				<div class="search">
+					<form>
+						<select>
+							<option>Hall Rental</option>
+							<option>Photography</option>
+							<option>Food and Catering</option>
+							<option>Decorations</option>
+						</select>
+						<input type="text" placeholder="Location">
+
+						
+						 <p for="amount">Price range</p>
+						 <input type="text" id="amount" readonly style="border:0; color:indianred; font-weight:bold;"/>
+						
+						<div id="slider-range"></div>
+
+
+						<p>Capacity</p>
+						<input value="1000" class="range" id="textInput" type="range" min="1000" max="20000" oninput="$('#capacity').text(textInput.value)">
+						<output id="capacity" name="amount" for="textInput" >1000</output>
+						<output style="float:right;" >20000</output>
+						
+	
+						<button>SEARCH</button>
+
+					</form>
+				</div>
+
+				<div class="results">
+					<p>5 Halls in Ikeja</p>
+				</div>
+
+				<div class="listingContainer">
+					<div class="listing">
+						<img src="images/1.jpg">
+						<div class="price">N450'000</div>
+						<button class="book">Book</button>
+						<h1>Kotco Event Center</h1>
+						<p>Hall . Car Park . Toilet</p>
+					</div>
+
+					<div class="listing">
+						<img src="images/2.jpg">
+						<div class="price">N300'000</div>
+						<button class="book">Book</button>
+						<h1>Haddasah Event Center</h1>
+						<p>Hall .  Air Conditioning . Car Park . Security</p>
+					</div>
+
+					<div class="listing">
+						<img src="images/3.jpg">
+						<div class="price">N300'000</div>
+						<button class="book">Book</button>
+						<h1>Landmark Event Center</h1>
+						<p>Hall .  Air Conditioning . Car Park . Security</p>
+					</div>
+
+					<div class="listing">
+						<img src="images/4.jpg">
+						<div class="price">N250'000</div>
+						<button class="book">Book</button>
+						<h1>Mambillah Center</h1>
+						<p>Hall .  Air Conditioning . Car Park . Security</p>
+					</div>
+
+					<div class="listing">
+						<img src="images/5.jpg">
+						<div class="price">N100'000</div>
+						<button class="book">Book</button>
+						<h1>Water Glass</h1>
+						<p>Hall .  Air Conditioning . Car Park . Security</p>
+					</div>
+
+				</div>	
+			</div>
+
+			<!--occasion details-->
+			<div class="right">
+				<h1>Grill At The Pent</h1>
+				<p class="date">23 / 03 / 2015</p>
+				<p class="services">Hall</p>
+				<p class="services">Music</p>
+				<p class="services">Catering & Decoration</p>
+
+				<button>Cancel</button>
+				<button>Previous</button>
+				<button>Next</button>
+				<button class="addNewService">Add New Service</button>
+				<button class="finish-btn">Finish</button>
+			</div>
+
+		</section>
+	</div>
+		<footer></footer>
+
+
+		<script>
+		  $(function() {
+		    $( "#slider-range" ).slider({
+		      range: true,
+		      min: 1000,
+		      max: 100000,
+		      values: [ 0, 100000 ],
+		      slide: function( event, ui ) {
+		        $( "#amount" ).val( "N" + ui.values[ 0 ] + " - N" + ui.values[ 1 ] );
+		      }
+		    });
+		    $( "#amount" ).val( "N" + $( "#slider-range" ).slider( "values", 0 ) +
+		      " - N" + $( "#slider-range" ).slider( "values", 1 ) );
+		  });
+  </script>	
+
+	
+	<script src="js/animations.js"></script>	
+	</body>
+</html>
